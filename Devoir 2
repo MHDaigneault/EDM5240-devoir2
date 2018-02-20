@@ -1,0 +1,54 @@
+#coding: utf-8
+import csv
+#importer le fichier
+fichier="grants.csv"
+#identifier le fichier a importer
+
+f1 = open(fichier,encoding = "utf-8")
+#ouvrir le fichier
+
+lignes = csv.reader(f1)
+#l'intégralité du document s'appel lignes.
+
+editeurs = "aide aux éditeurs"
+innovation = "innovation commerciale"
+initiative = "initiatives collectives"
+n=0
+#Il s'agit des trois programmes.
+
+for subvention in lignes:
+#début de la boucle.
+
+#https://stackoverflow.com/questions/4843158/check-if-a-python-list-item-contains-a-string-inside-another-string
+	if any(editeurs in element for element in subvention):
+		
+		date = subvention[13]
+		#la date est le 13e élément
+		annee = date.split("-")
+		#séparer la date avec des -.
+		n+=1
+
+		print("-" * 10)
+		print(n,annee[0], subvention)
+		print(editeurs)
+	
+
+	if any(innovation in element for element in subvention):
+
+		date = subvention[13]
+		annee = date.split("-")
+		n+=1
+		
+		print("-" * 10)
+		print(n,annee[0], subvention)
+		print(innovation)
+
+
+	if any(initiative in element for element in subvention):
+		date = subvention[13]
+		annee = date.split("-")
+		n+=1
+			
+		print("-" * 10)
+		print(n,annee[0], subvention)
+		print(initiative)
