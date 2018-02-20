@@ -10,9 +10,9 @@ f1 = open(fichier,encoding = "utf-8")
 lignes = csv.reader(f1)
 #l'intégralité du document s'appel lignes.
 
-editeurs = "aide aux éditeurs"
-innovation = "innovation commerciale"
-initiative = "initiatives collectives"
+editeurs = "Aide aux éditeurs"
+innovation = "Innovation commerciale"
+initiative = "Initiatives collectives"
 n=0
 #Il s'agit des trois programmes.
 
